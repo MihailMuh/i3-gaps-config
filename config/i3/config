@@ -163,3 +163,10 @@ default_border pixel
 
 for_window [ALL] border pixel 5
 
+#обычный скриншот
+bindsym Print exec gnome-screenshot
+
+# screenshot with options
+bindsym $mod+Print exec gnome-screenshot -l
+
+
