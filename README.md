@@ -8,8 +8,8 @@ git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 
-# Установка терминала, файлового менеджера, менеджера обоев, графического менеджера (соответсвенно)
-sudo pacman -S alacritty pcmanfm nitrogen picom
+# Установка терминала, файлового менеджера, менеджера обоев, графического менеджера, менеджера скриншотов (соответсвенно)
+sudo pacman -S alacritty pcmanfm nitrogen picom gnome-screenshot
 
 В этом репо, в конфиге nitrogen, установлена пака для обоев по пути ~/Pictures/wallpapers и картинка для рабочего стола - space.jpg (см. папку wallpapers в этом репо)
 Для своей настройки вводи в терминал nitrogen для gui редактора
