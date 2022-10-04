@@ -1,37 +1,65 @@
 <div align="center">
 
+# Установка Arch Linux
+https://gist.github.com/fjpalacios/441f2f6d27f25ee238b9bfcb068865db
+
+<br>
+
 # Скриншот
 ![screenshot](./assets/screenshot.png)
 
 # Установка для Arch Linux
 </div>
 
+## Установка Xserver
+```
+sudo pacman -S xorg-server xorg-apps xorg-xinit
+```
+
 ## Установка i3-gaps
 ```
-sudo pacman -S xorg-server xorg-xinit i3-gaps i3status dmenu
+sudo pacman -S i3-gaps polybar rofi
 ```
-## Установка paru (для гугла и не только)
+
+### Установка терминала, файлового менеджера, менеджера обоев, менеджера анимаций, менеджера скриншотов (соответсвенно)
 ```
-sudo pacman -S --needed base-devel git
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-```
-## Установка терминала, файлового менеджера, менеджера обоев, графического менеджера, менеджера скриншотов (соответсвенно)
-```
-sudo pacman -S alacritty pcmanfm nitrogen picom gnome-screenshot
+sudo pacman -S alacritty nautilus nitrogen picom gnome-screenshot
 ```
 В этом репо, в конфиге nitrogen, установлена пака для обоев по пути ~/Pictures/wallpapers и картинка для рабочего стола - space.jpg (см. папку wallpapers в этом репо).
 
 Для своей настройки вводи в терминал ```nitrogen``` для gui редактора
 
-## Установка Гугла
+## Установка paru (для гугла и не только)
 ```
-paru -S google-chrome
+sudo pacman -S --needed base-devel git
+```
+```
+git clone https://aur.archlinux.org/paru.git
+```
+```
+cd paru
+```
+```
+makepkg -si
+```
+
+## Установка полезного ПО
+```
+paru -S google-chrome sublime-text-3
+```
+
+Символическая ссылка, чтобы открывать sublime через консоль, например subl /etc/hosts
+```
+sudo ln -s /opt/sublime_text_3/sublime_text /usr/local/bin/subl
 ```
 
 ## Копирование конфигов
-Скопируй все папки из config (в этом репо) в директорию ~/.config:
+```
+git clone https://github.com/MihailMuh/i3-gaps-config.git
+```
+```
+cd i3-gaps-config
+```
 ```
 cp -r ./config/* ~/.config
 ```
