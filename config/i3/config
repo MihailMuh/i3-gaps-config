@@ -41,6 +41,9 @@ exec --no-startup-id setxkbmap -model pc104 -layout us,ru -variant -option grp:a
 # run polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
+# Support for second monitor
+exec_always --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --output HDMI-1  --mode 1366x768 --pos 1920x0
+
 
 ########################## BINDSYMS ##########################
 
@@ -157,8 +160,7 @@ bindsym $mod+r mode "resize"
 
 focus_follows_mouse no
 
-gaps inner 30
-gaps vertical 10
+gaps inner 13
 smart_borders on
 smart_borders no_gaps
 
