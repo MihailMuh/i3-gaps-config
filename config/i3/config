@@ -15,8 +15,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-set $refresh_polybarr killall -SIGUSR1 polybar
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -38,7 +36,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom 
 
 # keyboard toggles
-exec --no-startup-id setxkbmap -model pc105 -layout us,ru -variant -option grp:alt_shift_toggle
+exec --no-startup-id setxkbmap -model pc104 -layout us,ru -variant -option grp:alt_shift_toggle
 
 # run polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -48,10 +46,9 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_polybar
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_polybar
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_polybar
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_polybar
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # start Google
 bindsym $mod+w exec google-chrome-stable
@@ -66,7 +63,7 @@ bindsym Mod1+F4 kill
 bindsym $mod+f exec nautilus
 
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun 
+bindsym $mod+d exec rofi -show drun 
 
 # change focus
 bindsym $mod+Left focus left
@@ -125,8 +122,6 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # common screenshot
 bindsym Print exec gnome-screenshot

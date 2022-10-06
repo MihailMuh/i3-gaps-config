@@ -29,6 +29,11 @@ sudo pacman -S alacritty nautilus nitrogen picom gnome-screenshot ttf-font-aweso
 
 Для своей настройки вводи в терминал ```nitrogen``` для gui редактора
 
+## Установка PulseAudio
+```
+sudo pacman -S pulseaudio pulseaudio-alsa
+```
+
 ## Установка paru (для гугла и не только)
 ```
 sudo pacman -S --needed base-devel git
@@ -62,4 +67,9 @@ cd i3-gaps-config
 ```
 ```
 cp -r ./config/* ~/.config
+```
+
+## Перезагрузка
+```
+sudo reboot
 ```
