@@ -58,6 +58,15 @@ paru -S google-chrome sublime-text-3
 sudo ln -s /opt/sublime_text_3/sublime_text /usr/local/bin/subl
 ```
 
+## Установка dconf-editor для настройки nautilus
+```
+paru -S gconf-editor
+```
+### Добавим возможность копировать / редактировать путь к текущей директории
+```
+dconf write /org/gnome/nautilus/preferences/always-use-location-entry true
+```
+
 ## Копирование конфигов
 ```
 git clone https://github.com/MihailMuh/i3-gaps-config.git
@@ -69,7 +78,7 @@ cd i3-gaps-config
 cp -r ./config/* ~/.config
 ```
 
-## Перезагрузка
+## Перезагрузка обязательна
 ```
 sudo reboot
 ```
