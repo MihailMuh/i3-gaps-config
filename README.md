@@ -21,9 +21,9 @@ sudo pacman -S xorg-server xorg-apps xorg-xinit
 sudo pacman -S i3-gaps polybar rofi
 ```
 
-### Установка терминала, файлового менеджера, менеджера обоев, менеджера анимаций, менеджера скриншотов (соответсвенно)
+### Установка терминала, файлового менеджера, менеджера обоев, менеджера анимаций, менеджера скриншотов, шрифта с поддержкой иконок (соответсвенно)
 ```
-sudo pacman -S alacritty nautilus nitrogen picom gnome-screenshot
+sudo pacman -S alacritty nautilus nitrogen picom gnome-screenshot ttf-font-awesome
 ```
 В этом репо, в конфиге nitrogen, установлена пака для обоев по пути ~/Pictures/wallpapers и картинка для рабочего стола - space.jpg (см. папку wallpapers в этом репо).
 
