@@ -25,7 +25,10 @@ sudo pacman -S i3-gaps polybar rofi
 ```
 sudo pacman -S alacritty nautilus nitrogen picom gnome-screenshot ttf-font-awesome
 ```
-В этом репо, в конфиге nitrogen, установлена пака для обоев по пути ~/Pictures/wallpapers и картинка для рабочего стола - space.jpg (см. папку wallpapers в этом репо).
+В этом репо, в конфиге nitrogen, установлена пака для обоев по пути ~/Pictures/wallpapers/ и картинка для рабочего стола - space.jpg (см. папку wallpapers в этом репо), поэтому переместим ее в соответсвующую директорию:
+```
+sudo cp ./wallpapers/space.jpg ~/Pictures/wallpapers/
+```
 
 Для своей настройки вводи в терминал ```nitrogen``` для gui редактора
 
@@ -65,6 +68,19 @@ paru -S gconf-editor
 ### Добавим возможность копировать / редактировать путь к текущей директории
 ```
 dconf write /org/gnome/nautilus/preferences/always-use-location-entry true
+```
+
+## Установка обоев для lightdm (если установелн)
+```
+paru -S lightdm-gtk-greeter-settings
+```
+```
+sudo subl /etc/lightdm/lightdm-gtk-greeter.conf
+```
+В конце файла находим блок ```[greeter]``` и вместо ```#background=``` пишем ```background=/usr/share/pixmaps/space.jpg```.
+Теперь скопируйте обои в директорию ```/usr/share/pixmaps/```:
+```
+sudo cp ./wallpapers/space.jpg /usr/share/pixmaps/
 ```
 
 ## Копирование конфигов
