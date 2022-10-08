@@ -26,9 +26,6 @@ floating_modifier $mod
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-# GUI for NetworkManager.
-exec --no-startup-id nm-applet
-
 # wallpapers
 exec --no-startup-id nitrogen --restore
 
@@ -53,6 +50,11 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+# Use python script to adjust brightness of screen
+# Use your gpu-model. See available: ls /sys/class/backlight/
+bindsym XF86MonBrightnessUp exec --no-startup-id python ~/.config/i3/backlight.py up intel_backlight
+bindsym XF86MonBrightnessDown exec --no-startup-id python ~/.config/i3/backlight.py down intel_backlight
+
 # start Google
 bindsym $mod+w exec google-chrome-stable
 
@@ -66,7 +68,7 @@ bindsym Mod1+F4 kill
 bindsym $mod+f exec nautilus
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -show drun 
+bindsym $mod+d exec rofi -show drun -theme theme
 
 # change focus
 bindsym $mod+Left focus left

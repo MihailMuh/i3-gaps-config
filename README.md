@@ -83,6 +83,16 @@ sudo subl /etc/lightdm/lightdm-gtk-greeter.conf
 sudo cp ./wallpapers/space.jpg /usr/share/pixmaps/
 ```
 
+## Изменение яркости
+По умолчанию, Linux ограничивает возможность изменения яркости. Чтобы это обойти, необходимо добавить пользователя в группу ```video```:
+```
+sudo usermod -a -G video you_username
+```
+И добавить правило: 
+```
+sudo echo ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chgrp video $sys$devpath/brightness", RUN+="/bin/chmod g+w $sys$devpath/brightness" >> /etc/udev/rules.d/backlight.rules
+```
+
 ## Копирование конфигов
 ```
 git clone https://github.com/MihailMuh/i3-gaps-config.git
