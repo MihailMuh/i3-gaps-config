@@ -65,7 +65,7 @@ bindsym $mod+t exec alacritty
 bindsym Mod1+F4 kill
 
 # start File Manager
-bindsym $mod+f exec nautilus
+bindsym $mod+f exec thunar
 
 # start rofi (a program launcher)
 bindsym $mod+d exec rofi -show drun -theme theme

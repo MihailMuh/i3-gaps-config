@@ -23,7 +23,7 @@ sudo pacman -S i3-gaps polybar rofi
 
 ### Установка терминала, файлового менеджера, менеджера обоев, менеджера анимаций, менеджера скриншотов, шрифта с поддержкой иконок (соответсвенно)
 ```
-sudo pacman -S alacritty nautilus nitrogen picom gnome-screenshot ttf-font-awesome
+sudo pacman -S alacritty thunar nitrogen picom gnome-screenshot ttf-font-awesome
 ```
 В этом репо, в конфиге nitrogen, установлена пака для обоев по пути ~/Pictures/wallpapers/ и картинка для рабочего стола - space.jpg (см. папку wallpapers в этом репо), поэтому переместим ее в соответсвующую директорию:
 ```
@@ -59,15 +59,6 @@ paru -S google-chrome sublime-text-3
 Символическая ссылка, чтобы открывать sublime через консоль, например subl /etc/hosts
 ```
 sudo ln -s /opt/sublime_text_3/sublime_text /usr/local/bin/subl
-```
-
-## Установка dconf-editor для настройки nautilus
-```
-paru -S gconf-editor
-```
-### Добавим возможность копировать / редактировать путь к текущей директории
-```
-dconf write /org/gnome/nautilus/preferences/always-use-location-entry true
 ```
 
 ## Установка обоев для lightdm (если установелн)
