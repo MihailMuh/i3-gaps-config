@@ -53,7 +53,7 @@ makepkg -si
 
 ## Установка полезного ПО
 ```
-paru -S google-chrome sublime-text-3 networkmanager-dmenu
+paru -S google-chrome sublime-text-3 networkmanager-dmenu zenity
 ```
 
 Символическая ссылка, чтобы открывать sublime через консоль, например subl /etc/hosts

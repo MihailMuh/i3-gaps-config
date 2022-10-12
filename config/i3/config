@@ -71,6 +71,12 @@ bindsym $mod+i exec /usr/idea-ultimate/bin/idea.sh
 # start Clion
 bindsym $mod+c exec /usr/clion/bin/clion.sh
 
+# common screenshot
+bindsym Print exec gnome-screenshot
+
+# screenshot with options
+bindsym $mod+Print exec gnome-screenshot -l
+
 # change focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -129,12 +135,6 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# common screenshot
-bindsym Print exec gnome-screenshot
-
-# screenshot with options
-bindsym $mod+Print exec gnome-screenshot -l
-
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -171,6 +171,9 @@ smart_borders no_gaps
 default_border pixel
 
 for_window [ALL] border pixel 5
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [class="Zenity"] move position mouse, move down 50 px
 
 font pango:Ubuntu:style=Medium 10
 
