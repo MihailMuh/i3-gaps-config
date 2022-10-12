@@ -21,11 +21,6 @@ floating_modifier $mod
 
 ########################## STARTUP ##########################
 
-
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
-
 # wallpapers
 exec --no-startup-id nitrogen --restore
 
@@ -69,6 +64,12 @@ bindsym $mod+f exec thunar
 
 # start rofi (a program launcher)
 bindsym $mod+d exec rofi -show drun -theme theme
+
+# start Intellij Idea
+bindsym $mod+i exec /usr/idea-ultimate/bin/idea.sh
+
+# start Clion
+bindsym $mod+c exec /usr/clion/bin/clion.sh
 
 # change focus
 bindsym $mod+Left focus left
