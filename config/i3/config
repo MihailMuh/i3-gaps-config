@@ -18,6 +18,7 @@ set $ws10 "10"
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+set $gpu-model intel_backlight
 
 ########################## STARTUP ##########################
 
@@ -47,8 +48,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 
 # Use python script to adjust brightness of screen
 # Use your gpu-model. See available: ls /sys/class/backlight/
-bindsym XF86MonBrightnessUp exec --no-startup-id python ~/.config/i3/backlight.py up intel_backlight
-bindsym XF86MonBrightnessDown exec --no-startup-id python ~/.config/i3/backlight.py down intel_backlight
+bindsym XF86MonBrightnessUp exec --no-startup-id python ~/.config/i3/backlight.py up $gpu-model
+bindsym XF86MonBrightnessDown exec --no-startup-id python ~/.config/i3/backlight.py down $gpu-model
 
 # start Google
 bindsym $mod+w exec google-chrome-stable
@@ -63,7 +64,7 @@ bindsym Mod1+F4 kill
 bindsym $mod+f exec thunar
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -show drun -theme theme
+bindsym $mod+d exec rofi -show drun -theme fullscreen-blur
 
 # start Intellij Idea
 bindsym $mod+i exec /usr/idea-ultimate/bin/idea.sh
@@ -130,10 +131,8 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+# restart i3 and reload the configuration file
+bindsym $mod+Shift+r reload, restart
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
