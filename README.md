@@ -94,13 +94,17 @@ sudo subl /etc/lightdm/lightdm-gtk-greeter.conf
 В конце файла находим блок ```[greeter]``` и вместо ```#background=``` пишем ```background=/usr/share/pixmaps/space.jpg```
 
 ## Изменение яркости
-По умолчанию, Linux ограничивает возможность изменения яркости. Чтобы это обойти, необходимо добавить пользователя в группу ```video```:
+По умолчанию, Linux ограничивает возможность изменения яркости. Чтобы это обойти, необходимо добавить пользователя в группу ```video```
 ```
 sudo usermod -a -G video you_username
 ```
-И добавить правило: 
+И в файл
 ```
-sudo echo ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chgrp video $sys$devpath/brightness", RUN+="/bin/chmod g+w $sys$devpath/brightness" >> /etc/udev/rules.d/backlight.rules
+sudo subl /etc/udev/rules.d/backlight.rules
+```
+Добавить правило
+```
+ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chgrp video $sys$devpath/brightness", RUN+="/bin/chmod g+w $sys$devpath/brightness"
 ```
 
 ## Перезагрузка
