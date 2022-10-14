@@ -23,13 +23,13 @@ set $gpu-model intel_backlight
 ########################## STARTUP ##########################
 
 # wallpapers
-exec --no-startup-id nitrogen --restore
+exec_always --no-startup-id nitrogen --restore
 
 # blur / trancparancy / animations
-exec --no-startup-id picom 
+exec_always --no-startup-id picom 
 
 # keyboard toggles
-exec --no-startup-id setxkbmap -model pc104 -layout us,ru -variant -option grp:alt_shift_toggle
+exec_always --no-startup-id setxkbmap -model pc104 -layout us,ru -variant -option grp:alt_shift_toggle
 
 # run polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -78,6 +78,9 @@ bindsym Print exec gnome-screenshot
 # screenshot with options
 bindsym $mod+Print exec gnome-screenshot -l
 
+# gnome system monitor
+bindsym Control+Shift+Escape exec gnome-system-monitor
+
 # change focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -102,11 +105,11 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle, move position center
 
 # change focus between tiling / floating windows
 bindsym Mod1+Tab focus mode_toggle
-
+   
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -173,6 +176,7 @@ for_window [ALL] border pixel 5
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [class="Zenity"] move position mouse, move down 50 px
+for_window [class="Gnome-system-monitor"] floating enable, resize set width 35 ppt height 35 ppt, move position center
 
 font pango:Ubuntu:style=Medium 10
 

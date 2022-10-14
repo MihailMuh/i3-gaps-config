@@ -52,9 +52,9 @@ sudo cp ./wallpapers/space.jpg /usr/share/pixmaps/
 sudo chmod u+x ~/.config/polybar/launch.sh
 ```
 
-### Установка терминала, файлового менеджера, менеджера обоев, менеджера анимаций, менеджера скриншотов, шрифта с поддержкой иконок (соответсвенно)
+### Установка терминала, файлового менеджера, менеджера обоев, менеджера анимаций, менеджера скриншотов, шрифта с поддержкой иконок, аудиоплеера (соответсвенно)
 ```
-sudo pacman -S alacritty thunar nitrogen picom gnome-screenshot ttf-font-awesome
+sudo pacman -S alacritty thunar nitrogen picom gnome-screenshot ttf-font-awesome vlc
 ```
 Для настройки своих обоев пишите в терминал ```nitrogen```
 
@@ -74,12 +74,12 @@ cd paru
 makepkg -si
 ```
 
-## Установка полезного ПО
+### Установка гугла, текстового редактора, графического менеджера wifi сетей, календарика, просмотрщика изображений и плагин для .webp, диспетчера задач (соответсвенно)
 ```
-paru -S google-chrome sublime-text-3 networkmanager-dmenu zenity
+paru -S google-chrome sublime-text-3 networkmanager-dmenu zenity qview qt5-imageformats gnome-system-monitor
 ```
 
-Символическая ссылка, чтобы открывать sublime через консоль, например subl /etc/hosts
+Символическая ссылка, чтобы открывать sublime через консоль, например ```subl /etc/hosts```
 ```
 sudo ln -s /opt/sublime_text_3/sublime_text /usr/local/bin/subl
 ```
