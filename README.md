@@ -74,9 +74,9 @@ cd paru
 makepkg -si
 ```
 
-### Установка гугла, текстового редактора, графического менеджера wifi сетей, календарика, просмотрщика изображений и плагин для .webp, диспетчера задач (соответсвенно)
+### Установка гугла, текстового редактора, графического менеджера wifi сетей, календарика, просмотрщика изображений и плагин для .webp, диспетчера задач, пакета оффис, шрифты для оффиса (соответсвенно)
 ```
-paru -S google-chrome sublime-text-3 networkmanager-dmenu zenity qview qt5-imageformats gnome-system-monitor
+paru -S google-chrome sublime-text-3 networkmanager-dmenu zenity qview qt5-imageformats gnome-system-monitor wps-office ttf-wps-fonts ttf-ms-fonts
 ```
 
 Символическая ссылка, чтобы открывать sublime через консоль, например ```subl /etc/hosts```
