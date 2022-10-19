@@ -43,9 +43,6 @@ cd i3-gaps-config
 cp -r ./config/* ~/.config
 ```
 ```
-cp -r ./wallpapers ~/Pictures/
-```
-```
 sudo cp ./wallpapers/space.jpg /usr/share/pixmaps/
 ```
 ```
@@ -56,7 +53,7 @@ sudo chmod u+x ~/.config/polybar/launch.sh
 ```
 sudo pacman -S alacritty thunar nitrogen picom gnome-screenshot ttf-font-awesome vlc
 ```
-Для настройки своих обоев пишите в терминал ```nitrogen```
+Для настройки своих обоев пишите в терминал ```nitrogen```. Обои из этого репо находятся в папке ```wallpapers```
 
 ## Установка PulseAudio
 ```
@@ -74,15 +71,44 @@ cd paru
 makepkg -si
 ```
 
-### Установка гугла, текстового редактора, графического менеджера wifi сетей, календарика, просмотрщика изображений и плагин для .webp, диспетчера задач, пакета оффис, шрифты для оффиса (соответсвенно)
+### Установка гугла, текстового редактора, графического менеджера wifi сетей, календарика, просмотрщика изображений и плагин для .webp, диспетчера задач (соответсвенно)
 ```
-paru -S google-chrome sublime-text-3 networkmanager-dmenu zenity qview qt5-imageformats gnome-system-monitor wps-office ttf-wps-fonts ttf-ms-fonts
+paru -S google-chrome sublime-text-3 networkmanager-dmenu zenity qview qt5-imageformats gnome-system-monitor
 ```
 
 Символическая ссылка, чтобы открывать sublime через консоль, например ```subl /etc/hosts```
 ```
 sudo ln -s /opt/sublime_text_3/sublime_text /usr/local/bin/subl
 ```
+Добавьте ```127.0.0.1 www.sublimetext.com``` в ```/etc/hosts/```, чтобы убрать уведомление о новой версии
+
+## Установка пакета office
+```
+git clone https://aur.archlinux.org/wps-office.git
+```
+```
+cd wps-office
+```
+```
+subl PKGBUILD
+```
+Чтобы не было лишних проблем с системными шрифтами, закомментируйте эту строчку
+```
+install -Dm644 -t "${pkgdir}/usr/share/fonts/wps-office" fonts/wps-office/*
+```
+Устанавливаем офис
+```
+makepkg -si
+```
+```
+paru -S ttf-ms-fonts
+```
+Чтобы изменить тему и дизайн офиса, замените ```gOpt=``` на 
+```
+gOpt="-style=gtk+"
+export GTK2_RC_FILES=/usr/share/themes/Raleigh/gtk-2.0/gtkrc
+```
+в файлах ```/usr/bin/et```, ```/usr/bin/wpp```, ```/usr/bin/wps```, ```/usr/bin/wpspdf```
 
 ## Настройка обоев для lightdm
 ```
