@@ -150,3 +150,8 @@ sudo pacman -S gvfs gvfs-mtp ntfs-3g thunar-volman
 ```
 sudo reboot
 ```
+
+### Если захотите удалить неиспользуемые пакеты в системе пишите в терминал
+```
+pacman -Rs $(pacman -Qdtq)
+```
