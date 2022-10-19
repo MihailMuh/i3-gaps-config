@@ -133,6 +133,19 @@ sudo subl /etc/udev/rules.d/backlight.rules
 ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chgrp video $sys$devpath/brightness", RUN+="/bin/chmod g+w $sys$devpath/brightness"
 ```
 
+## Просмотр файлов windows и автомаунтинг флешек
+```
+sudo pacman -S gvfs gvfs-mtp ntfs-3g thunar-volman
+```
+После установки выполните:
+  1) Запустите Thunar и перейдите к Edit > Preferences
+  2) Во вкладке 'Advanced', отметьте флажком 'Enable Volume Management'
+  3) Щёлкните 'Configure' и проверьте следующие пункты:
+    1. Mount removable drives when hot-plugged.
+    2. Mount removable media when inserted.
+
+Запишите в файл ```/etc/fstab``` соответсвующий раздел и параметры. Некоторое объяснение есть в тут https://zalinux.ru/?p=4895. Если не понятно - гуглите еще
+
 ## Перезагрузка
 ```
 sudo reboot
