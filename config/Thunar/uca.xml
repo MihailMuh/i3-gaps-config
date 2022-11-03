@@ -10,4 +10,18 @@
 	<startup-notify/>
 	<directories/>
 </action>
+<action>
+	<icon>package-x-generic</icon>
+	<name>Archive to .tar.gz</name>
+	<unique-id>1667470314242938-1</unique-id>
+	<command>tar -cvf %n.tar.gz %F</command>
+	<description>Create an archive with .tar.gz extension</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
 </actions>
