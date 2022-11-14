@@ -49,9 +49,9 @@ sudo cp ./wallpapers/space.jpg /usr/share/pixmaps/
 sudo chmod u+x ~/.config/polybar/launch.sh
 ```
 
-### Установка терминала, файлового менеджера, архиватора, менеджера обоев, менеджера анимаций, менеджера скриншотов, шрифта с поддержкой иконок, аудиоплеера (соответсвенно)
+### Установка терминала, файлового менеджера, архиватора, менеджера обоев, менеджера анимаций, менеджера скриншотов, шрифта с поддержкой иконок, аудиоплеера, плагина для отображания эскиза картинок (соответсвенно)
 ```
-sudo pacman -S alacritty thunar file-roller nitrogen picom gnome-screenshot ttf-font-awesome vlc
+sudo pacman -S alacritty thunar file-roller nitrogen picom gnome-screenshot ttf-font-awesome vlc tumbler
 ```
 Для настройки своих обоев пишите в терминал ```nitrogen```. Обои из этого репо находятся в папке ```wallpapers```
 
